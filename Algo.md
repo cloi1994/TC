@@ -1,4 +1,8 @@
 1. 说下你知道的排序，比较一下他们的优缺点，复杂度和应用场景。
+   mergeSort
+   quickSort
+   insertionSort
+   bubbleSort
 
 2. 设计类似于LRU算法的一个固定cache内存交换算法，要求get,set,delete,高效，重点是数据结构的选用，
 * 后来面试官说最好用hash表   
