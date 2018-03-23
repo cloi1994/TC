@@ -35,9 +35,9 @@ a: http 1.0 每次
 17.tcp 断开连接过程
 
 18.tcp首部结构
-...* 源端口 source port
-...* 目的端口 destination port
-...* 序号 sequence number
-...* 确认号 acknowledgment number 
-...* 窗口大小 window size
-...* 检验和 checksum
+* 源端口 source port
+* 目的端口 destination port
+* 序号 sequence number
+* 确认号 acknowledgment number 
+* 窗口大小 window size
+* 检验和 checksum
