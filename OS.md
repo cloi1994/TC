@@ -18,6 +18,8 @@
 
 7. 协程(Coroutine)是什么？
 
+* 子例程(subroutine)的起始处是唯一的入口点，一旦return就完成了子程序的执行，子程序的一个实例只会运行一次。但是协程不一样，协程可以使用yield来切换到其他协程，然后再通过resume方法重入（reenter）到上次调用yield的地方，并且把resume的参数当成返回值传给了要重入（reenter）的协程。但是coroutine的状态都没有被改变，就像一个可以多次返回的subroutine。
+
 8. 同步和互斥(Mutually Exclusive)是怎么做的？
 
 9. 线程间的同步和互斥是怎么做的？
