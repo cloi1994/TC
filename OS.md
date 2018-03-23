@@ -18,12 +18,12 @@
 
 10.硬连接和软连接删了，原对象会如何？
 
-'''shell
+```shell
 
 ln file1 file2 
 ln -s file1 file3 
 
-'''
+```
 
 * (1) 删除原文件file1，对硬链接file2没影响，对软连接file3有影响(无效)；
 
