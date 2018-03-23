@@ -8,5 +8,7 @@
 
 5. 使用过 NoSQL 吗？大概讲了下。LINUX使用的多不？在LINUX下做过什么事情。。我说搭过Hadoop
 
+6. Mysql最左前缀原则 
+
 
 
