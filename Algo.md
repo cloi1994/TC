@@ -12,3 +12,8 @@
 * 然后我说了用文件索引，然后查找索引，面试官让说出来具体实现
 
 4.十亿qq号无顺序，有N个号码 256MB内存限制，设计算法快速找到
+
+
+Basic Calculator II
+
+Search for rotated array
