@@ -150,6 +150,27 @@
      静态类型 statically： 在编译时拒绝ill behaved；
 
      动态乐行 danamiclly： 在运行时拒绝 ill behaved；
+       
+     3. 静态类型分为：
+     显示类型explicitly typed，类型是语言语法的一部分。
+
+     隐式类型implicity typed，类型通过编译时推导
+
+     4、例子
+
+     无类型：汇编
+
+     弱类型、静态类型：C/C++
+
+     弱类型、动态类型检查：PHP/Perl
+
+     强类型、静态类型检查：JAVA/C#
+
+     强类型、动态类型检查：Python, Scheme
+
+     静态显式类型：Java/C
+
+     静态隐式类型：Ocaml/Haskell
 
 
 
