@@ -5,7 +5,7 @@
 2. linux里ipc有哪些?
 
 	A: 信号(Signal)，信号量(Semaphore)，消息(Message Q)，
-       共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
+	共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
 
 3. 为啥要cache呢？
    
@@ -24,13 +24,15 @@
 	  
 5. Cache的写操作有透写（Write-Through）和回写（Write-Back）两种方式
 
-	A:	
-		A) 在透写式Cache中，CPU的数据总是写入到内存中，如果对应内存位置的数据在Cache中有一个备份，
-		那么这个备份也要更新，保证内存和Cache中的数据永远同步。
-		B) 在回写式Cache中，把要写的数据只写到Cache中，并对Cache对应的位置做一个标记，
-		只在必要的时候才会将数据更新到内存中。作。 
-	  
-	  透写方式存在性能瓶颈，性能低于回写方式，现在的CPU设计基本上都是采用Cache回写方式。
+	A:
+
+	1. 在透写式Cache中，CPU的数据总是写入到内存中，如果对应内存位置的数据在Cache中有一个备份，
+	那么这个备份也要更新，保证内存和Cache中的数据永远同步。
+	
+	2.  在回写式Cache中，把要写的数据只写到Cache中，并对Cache对应的位置做一个标记，
+	只在必要的时候才会将数据更新到内存中。
+
+	透写方式存在性能瓶颈，性能低于回写方式，现在的CPU设计基本上都是采用Cache回写方式。
 
 4. Epoll与Select区别以及epoll优点，为什么一般情况下epoll性能比select好，ET模式与LT模式
 
