@@ -50,7 +50,7 @@
 
 **6. linux统计文本中每行第二个字段的和（awk搞定)**
 
-   A: cat a.txt | awk '{ x + $2}'
+	A: cat a.txt | awk '{ x + $2}'
    
 **7. KVM和Docker的区别是什么**
 
