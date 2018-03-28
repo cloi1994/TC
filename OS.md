@@ -1,14 +1,14 @@
 ## Linux
 
-** 1. 一个程序从开始运行到结束的完整过程。
+**1. 一个程序从开始运行到结束的完整过程。** 
 
-** 2. linux里ipc有哪些?
+**2. linux里ipc有哪些?** 
 
 	A: 信号(Signal)，信号量(Semaphore)，消息(Message Q)，
 
 	共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
 
-** 3. 为啥要cache呢？
+3. 为啥要cache呢？
 
 	A:
 
@@ -18,7 +18,7 @@
 
 	因为cache的访问延迟远远小于内存，所以访问这部分存在cache里的数据就会比直接去访问内存快的多，大概快一个量级。
  
-** 4. 数据写到cache里以后，具体是怎样更新到内存中的?
+4. 数据写到cache里以后，具体是怎样更新到内存中的?
 
 	A:　　写入数据时： 
 	第一步，CPU将数据写入Cach水
@@ -31,7 +31,7 @@
 	
 	第二步，CPU从Cache中读取数据
 	  
-** 5. Cache的写操作有透写（Write-Through）和回写（Write-Back）两种方式
+5. Cache的写操作有透写（Write-Through）和回写（Write-Back）两种方式
 
 	A:
 
