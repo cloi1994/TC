@@ -20,6 +20,8 @@ Basic Calculator II
 
 Search for rotated array
 
+Longest common substring
+
 字符串转整形函数实现和对象池实现
 
 
