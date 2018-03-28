@@ -9,3 +9,7 @@
 
 6. http://m.nowcoder.com/discuss/69932?from=ios_app_1.02.05
 
+7. https://www.nowcoder.com/discuss/48199?type=2&order=0&pos=158&page=1
+
+8. https://www.nowcoder.com/discuss/5554?type=2&order=0&pos=178&page=1
+
