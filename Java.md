@@ -4,3 +4,6 @@
 
 2. JVM JDK JRE
 
+
+Java:1.线程安全，锁的实现，以及各种线程同步方法的区别。四大引用，重载重写区别(我还涉及到JVM的动态分派和静态分派），hashmap源码（jdk1.8为什么要加入红黑树）和hashtable区别,stringBuilder,stringBuffer 区别
+
