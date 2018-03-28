@@ -2,8 +2,7 @@
 
 **1. 一个程序从开始运行到结束的完整过程。** 
 
-**2. linux里ipc有哪些?** 
-
+**2. linux里ipc有哪些?**
 	A: 信号(Signal)，信号量(Semaphore)，消息(Message Q)，
 
 	共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
