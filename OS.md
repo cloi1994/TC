@@ -5,22 +5,31 @@
 2. linux里ipc有哪些?
 
 	A: 信号(Signal)，信号量(Semaphore)，消息(Message Q)，
+
 	共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
 
 3. 为啥要cache呢？
-   
-	A: 内存的读写速度跟不上cpu所以加了个cache。
-        作用是加快CPU访问常见数据的速度，cache做的事情是把内存里面常用的存储数据存在自己这里供CPU读取，
-        因为cache的访问延迟远远小于内存，所以访问这部分存在cache里的数据就会比直接去访问内存快的多，大概快一个量级。
+
+	A:
+
+	内存的读写速度跟不上cpu所以加了个cache。
+
+	作用是加快CPU访问常见数据的速度，cache做的事情是把内存里面常用的存储数据存在自己这里供CPU读取，
+
+	因为cache的访问延迟远远小于内存，所以访问这部分存在cache里的数据就会比直接去访问内存快的多，大概快一个量级。
  
 4. 数据写到cache里以后，具体是怎样更新到内存中的?
 
 	A:　　写入数据时： 
-	  第一步，CPU将数据写入Cach水
-	  第二步，将Cache数据传送到Memory中相应的位置 
-	  读取数据时： 
-	  第一步，将Memory中的数据传送到Cache中
-	  第二步，CPU从Cache中读取数据
+	第一步，CPU将数据写入Cach水
+	
+	第二步，将Cache数据传送到Memory中相应的位置 
+	
+	读取数据时： 
+	
+	第一步，将Memory中的数据传送到Cache中
+	
+	第二步，CPU从Cache中读取数据
 	  
 5. Cache的写操作有透写（Write-Through）和回写（Write-Back）两种方式
 
