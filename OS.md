@@ -5,8 +5,8 @@
 2. linux里ipc有哪些?
 
 3. 为啥要cache呢？
-
-A3: 我说内存的读写速度跟不上cpu所以加了个cache。那你讲一讲我把数据写到cache里以后，具体是怎样更新到内存中的
+   
+   A3: 我说内存的读写速度跟不上cpu所以加了个cache。那你讲一讲我把数据写到cache里以后，具体是怎样更新到内存中的
 
 4. Epoll与Select区别以及epoll优点，为什么一般情况下epoll性能比select好，ET模式与LT模式
 
