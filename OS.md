@@ -4,9 +4,16 @@
 
 2. linux里ipc有哪些?
 
+   A: 信号(Signal)，信号量(Semaphore)，消息(Message Q)，
+      共享内存(shared memory)，文件系统(FS). Socket, 管道(PIPE)
+
 3. 为啥要cache呢？
    
-   A3: 我说内存的读写速度跟不上cpu所以加了个cache。那你讲一讲我把数据写到cache里以后，具体是怎样更新到内存中的
+   A3: 我说内存的读写速度跟不上cpu所以加了个cache。
+       作用是加快CPU访问常见数据的速度，cache做的事情是把内存里面常用的存储数据存在自己这里供CPU读取，
+       因为cache的访问延迟远远小于内存，所以访问这部分存在cache里的数据就会比直接去访问内存快的多，大概快一个量级。
+ 
+4. 数据写到cache里以后，具体是怎样更新到内存中的
 
 4. Epoll与Select区别以及epoll优点，为什么一般情况下epoll性能比select好，ET模式与LT模式
 
@@ -18,7 +25,10 @@
 
 6. linux统计文本中每行第二个字段的和（awk搞定）
 
+   A: cat a.txt | awk '{ x + $2}'
+   
 7. KVM和Docker的区别是什么
+
    A: DOCKER采用的是容器虚拟化，kVM是硬件虚拟化， Docker 的基础是 Linux 容器（LXC）等技术。在 LXC 的基础上 Docker 进行了进一步的封装，
       让用户不需要去关心容器的管理，使得操作更为简便。用户操作 Docker 的容器就像操作一个快速轻量级的虚拟机一样简单。
       DOCKER充分利用了资源，更能针对PAAS去布署，KVM现在应用在IAAS方面比较多
