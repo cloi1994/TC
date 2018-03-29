@@ -25,9 +25,11 @@
 
 2. 进程间通信方式
 	
-	A: * 管道（pipe）
-	   * 信号（signal）
-	   * Socket
+	A: 管道（pipe）
+	   
+	   信号（signal）
+	   
+	   Socket
 
 3. 管道一般用途，如何用管道实现非亲缘进程间通信?
 
