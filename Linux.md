@@ -7,7 +7,7 @@
 
 	   3. 汇编: 将汇编代码转成二进制文件，二进制文件就可以让机器来读取。每一条汇编语句都会产生一句机器语言
 
-	   4. 链接
+	   4. 链接: 把Lib文件和.obj文件合起來生成EXE文件
 
 <img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/1338355-20180304130814151-249194330.png" width="60%">
 
