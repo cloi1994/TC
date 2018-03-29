@@ -74,7 +74,7 @@
 
 	   非阻塞买奶茶：小明点单交钱，等着拿奶茶，等的过程中，时不时刷刷微博、朋友圈。
 
-**8. Epoll与Select区别以及epoll优点，为什么一般情况下epoll性能比select好
+**8. Epoll与Select区别以及epoll优点，为什么一般情况下epoll性能比select好? **
 
 	A: Select, Poll: 当连接有I/O流事件产生的时候，就会去唤醒进程去处理。 
 
