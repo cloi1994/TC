@@ -9,7 +9,7 @@
 
 	   4. 链接
 
-	   <img class="inline" src="https://raw.github.com/cloi1994/TC/blob/master/1338355-20180304130814151-249194330.png" width="40%">
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/1338355-20180304130814151-249194330.png" width="40%">
 
 **2. linux里ipc有哪些?**
 	
