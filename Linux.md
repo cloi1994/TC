@@ -135,6 +135,9 @@ ET模式下accept存在的问题 考虑这种情况：多个连接同时到达�
 
 while ((conn_sock = accept(listenfd,(struct sockaddr *) &remote, (size_t *)&addrlen
 
+在一个非阻塞的socket上调用read/write函数, 返回的errno为EAGAIN或者EWOULDBLOCK 
+这个错误表示资源暂时不够，read时，读缓冲区没有数据，或者write时，写缓冲区满了。遇到这种情况，如果是阻塞socket，read/write就要阻塞掉。而如果是非阻塞socket，read/write立即返回-1， 同时errno设置为EAGAIN。
+
 **10. Epoll ET下非阻塞读，为什么不能是阻塞**
 
 	A: 如果你的文件描述符如果不是非阻塞的.1.对于读：由于需要一直读直到把数据读完，
