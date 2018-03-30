@@ -107,6 +107,27 @@
      3. 同步其实已经实现了互斥，所以同步是一种更为复杂的互斥。
      4. 互斥是一种特殊的同步。
 
+**8. Lock 底层**
+
+	A: Locks using interrupts(中断) 
+	   Locks using test&set(硬件: 原子指令)
+
+**9. Deadlock怎么发生？**
+
+	A: T1 -----Waiting ---> A
+	   |                   |
+	   B assgined to T1   A assgiend to T2
+	   |                   |
+	   B  <------Waiting  T2
+
+10. Deadlock 解決方式?
+
+	A: 1）预防或避免死锁：想法是不要让系统进入死锁状态。
+
+	   2）死锁检测和恢复：定期检查死锁
+                             通过杀死死锁进程并释放其资源来恢复
+
+	   3）忽略问题：如果死锁非常罕见，那么让它发生并重新启动系统。 这是Windows和UNIX所采用的方法。
 
 ## File System
 
