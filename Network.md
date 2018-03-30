@@ -40,6 +40,11 @@
 
 **5.TCP三次握手的过程，建立完成后双方处于什么状态?**
 
+	A:
+	
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/100327002629.jpg" width="60%">
+
+	建立完成后双方处于Established状态 客户端和服务器就建立了tcp连接。这时可以调用accept函数获得此连接
 
 **6.怎么断开连接?**
 
@@ -47,6 +52,9 @@
 	   2. 接收到这个FIN的对端执行被动关闭。这个FIN由tcp确认(ACK)。
 	   3. 一段时间后，接受到这个文件结束符的应用进程将调用close关闭它的套接字。这导致它的tcp也发送一个FIN分节。
 	   4. 执行主动关闭的那一端确认(ACK)这个FIN。
+
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/100327022731.jpg" width="60%">
+
 
 **7.time wait状态是哪一方的，有什么作用，时间持续多久?**
 
