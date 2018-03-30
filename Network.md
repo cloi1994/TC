@@ -191,6 +191,8 @@
 
 **15.网络七层协议**
 
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/192215h1k66aftkz4p0h6u.jpg" width="60%">
+
 **描述一个http从发送请求到接收消息整个七层过程，用到的协议**
 
 
@@ -229,6 +231,7 @@
 	A: HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。
 	服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。
 
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/20130924102812796.jpg" width="60%">
 
 **SSL的位置**
 
