@@ -42,7 +42,7 @@
 
 	A:
 	
-<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/100327002629.jpg" width="60%">
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/100327002629.png" width="60%">
 
 	建立完成后双方处于Established状态 客户端和服务器就建立了tcp连接。这时可以调用accept函数获得此连接
 
