@@ -125,7 +125,7 @@
 	应用程序可以不立即处理该事件。，因为只要对应的文件描述符中还有数据未读取或者处于可写状态，都会有通知。
 	下次调用epoll_wait时，会再次响应应用程序并通知此事件。并且同时支持block和no-block socket
 	
-	   Block-LT - 每次只读/写1个字符, 只样确保不阻塞其他 fd/socket IO. 
+	   Block-LT - 每次只读/写1个字符, 只样确保不阻塞其他 fd/socket IO. (epoll_wait 只trigger 可读/可写)
 
 	   Edge Triggered ( ET )边缘触发，即当epoll_wait检测到描述符事件发生并将此事件通知应用程序，
 	应用程序必须立即处理该事件。如果不处理，例如，在read的时候没有一次性把缓冲区的数据全部读出来，
