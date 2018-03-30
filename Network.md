@@ -54,6 +54,7 @@
 
 	   客户端主动关闭连接时，会发送最后一个ack后，然后会进入TIME_WAIT状态，再停留2个MSL时间，进入CLOSED状态。
 	   
+<img class="inline" src="https://raw.githubusercontent.com/cloi1994/TC/master/734c7efd-3d62-3946-a234-acdddff3b507.jpg" width="60%">
 
 **8.为什么要有time_wait，如果没有的话什么危害?**
 
