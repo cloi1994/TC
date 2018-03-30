@@ -30,6 +30,7 @@
 	           游戏(Lag)
 
 **3.tcp首部结构**
+
 	A: * 源端口 source port
 	* 目的端口 destination port
 	* 序号 sequence number
