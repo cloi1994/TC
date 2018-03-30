@@ -115,12 +115,25 @@
 	       
 	       但是请注意，如果一直不对这个fd作IO操作(从而导致它再次变成未就绪)，内核不会发送更多的通知。
 	       
-	       Level_triggered(水平触发)： 这是epoll默认的触发方式，既支持阻塞模式，也支持非阻塞模式，当被监控的文件描述符上有可读写事件发生时，epoll_wait()会通知处理程序去读写。如果这次没有把数据一次性全部读写完(如读写缓冲区太小)，那么下次调用 epoll_wait()时，它还会通知你在上次没读写完的文件描述符上继续读写
+Level Triggered ( LT )水平触发，默认方式，即当epoll_wait检测到描述符事件发生并将此事件通知应用程序，应用程序可以不立即处理该事件。下次调用epoll_wait时，会再次响应应用程序并通知此事件。
 
-Edge_triggered(边缘触发)： 这种模式下，epoll只支持非阻塞模式，当被监控的文件描述符上有可读写事件发生时，epoll_wait()会通知处理程序去读写。如果这次没有把数据全部读写完(如读写缓冲区太小)，那么下次调用epoll_wait()时，它不会通知你，也就是它只会通知你一次，直到该文件描述符上出现第二次可读写事件才会通知你。Nginx默认采用ET模式来使用epoll。
+Edge Triggered ( ET )边缘触发，即当epoll_wait检测到描述符事件发生并将此事件通知应用程序，应用程序必须立即处理该事件。如果不处理，下次调用epoll_wait时，不会再次响应应用程序并通知此事件。
 
-二者的差异在于level-trigger模式下只要某个socket处于readable/writable状态，无论什么时候进行epoll_wait都会返回该socket；而edge-trigger模式下只要监测描述符上有数据，epoll_wait就会返回该socket。 
-所以，在epoll的ET模式下，正确的读写方式为:
+注：ET模式在很大程度上减少了epoll事件被重复触发的次数，因此效率要比LT模式高。epoll工作在ET模式的时候，必须使用非阻塞套接口，以避免由于一个文件句柄的阻塞读/阻塞写操作把处理多个文件描述符的任务饿死。
+
+那么对应到socket编程中的accept, read, write，有必要详细说说。
+
+在LT模式下，accept,read,write和平时的编程方式并没有要特别注意的地方，因为只要对应的文件描述符中还有数据未读取或者处于可写状态，都会有通知。例如说，在read的时候没有一次性把缓冲区的数据全部读出来，那么epoll还会再次通知此事件。可以在阻塞和非阻塞的套接字上使用。
+
+然而，在ET模式下，epoll只在事件发生时发生通知，没有新的事件发生就不通知。例如，在read的时候没有一次性把缓冲区的数据全部读出来，那么epoll不会再次通知此事件。除非有新的事件发生，不然监听的描述符是无法被触发。只能在非阻塞的套接字上使用。
+
+Edge Triggered event distribution delivers events only when events happens on the monitored file 。
+
+ET模式下accept存在的问题 考虑这种情况：多个连接同时到达，服务器的TCP就绪队列瞬间积累多个就绪连接，由于是边缘触发模式，epoll只会通知一次，accept只处理一个连接，导致TCP就绪队列中剩下的连接都得不到处理。
+
+解决办法是用while循环抱住accept调用，处理完TCP就绪队列中的所有连接后再退出循环。如何知道是否处理完就绪队列中的所有连接呢？accept返回-1并且errno设置为EAGAIN就表示所有连接都处理完。
+
+while ((conn_sock = accept(listenfd,(struct sockaddr *) &remote, (size_t *)&addrlen
 
 **10. Epoll ET下非阻塞读，为什么不能是阻塞**
 
