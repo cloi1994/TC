@@ -261,7 +261,7 @@
 	A: HTTP持久连接（HTTP persistent connection，也称作HTTP keep-alive或HTTP connection reuse）
 	是使用同一个TCP连接来发送和接收多个HTTP请求/应答，而不是为每一个新的请求/应答打开新的连接的方法。
 	
-	web服务器会保持连接若干秒(Apache中默认15秒)
+	注: web服务器会保持连接若干秒(Apache中默认15秒)
 
 21. 服务器如何解决大量的用户访问。我说线程池。说到等待队列。他说等待队列的大小值如何给定。 服务器如何确定访问的最大 客户端 数目。
 
