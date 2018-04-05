@@ -29,7 +29,7 @@
 
 	A:　　写入数据时： 
 	
-	      第一步，CPU将数据写入Cach水
+	      第一步，CPU将数据写入Cache
 	
 	      第二步，将Cache数据传送到Memory中相应的位置 
 	
